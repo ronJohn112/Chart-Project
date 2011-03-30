@@ -8,6 +8,9 @@ import processing.core.*;
  * @author naveeouthaphone
  */
 public class Main extends PApplet {
+    int windowWidth = 0;
+    int windowHeight = 0;
+    float[] values = null;
 
 
     public static void main(String[] args) {
@@ -27,7 +30,13 @@ public class Main extends PApplet {
     }
     @Override
     public void setup() {
+        windowWidth = Integer.parseInt(args[1]);
+        windowHeight = Integer.parseInt(args[2]);
+        size(windowWidth, windowHeight);
+        smooth();
+        background(100);
         float[] barValues = new float[args.length-3];
+        float maxHeight = Float.parseFloat(args[2])-20;
         float highestBar = 0;
         float barWidth = 0;
 
@@ -38,6 +47,13 @@ public class Main extends PApplet {
                 highestBar = currentBarValue;
             }
         }
+    barWidth = (Float.parseFloat(args[1])-((barValues.length+1)*5))/barValues.length;
+
+    for(int j=0; j<barValues.length; j++) {
+        float y = (barValues[j]/highestBar)*maxHeight;
+        float x = 5+((barWidth+5)*j);
+        rect(x, maxHeight-y, barWidth, y);
+    }
     }
 }
 
