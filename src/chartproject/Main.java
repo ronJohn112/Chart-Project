@@ -53,7 +53,7 @@ public class Main extends PApplet {
     for(int j=0; j<barValues.length; j++) {
         float y = (barValues[j]/highestBar)*maxHeight;
         float x = 5+((barWidth+5)*j);
-        rect(x, maxHeight-y, barWidth, y);
+        rect(x, barHeight-y-20, barWidth, y);
     }
     }
 }
