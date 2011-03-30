@@ -36,7 +36,6 @@ public class Main extends PApplet {
         smooth();
         background(100);
         float[] barValues = new float[args.length-3];
-        float maxHeight = Float.parseFloat(args[2])-20;
         float highestBar = 0;
         float barWidth = 0;
 
