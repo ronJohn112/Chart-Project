@@ -1,17 +1,17 @@
-
 package chartproject;
 
 import processing.core.*;
 import java.util.Random;
+
 /**
  *
  * @author naveeouthaphone
  */
 public class Main extends PApplet {
+
     int windowWidth = 0;
     int windowHeight = 0;
     float[] values = null;
-
 
     public static void main(String[] args) {
         String tempArgs[] = new String[args.length + 2];
@@ -28,49 +28,64 @@ public class Main extends PApplet {
         //Send the String array to the PApplet's main function.
         PApplet.main(tempArgs);
     }
+
     @Override
     public void setup() {
+        //Setting up the width and height of the window fromt the args.
         windowWidth = Integer.parseInt(args[1]);
         windowHeight = Integer.parseInt(args[2]);
         size(windowWidth, windowHeight);
         smooth();
-        background(100);
-        int[] barValues = new int[args.length-3];
-        float maxHeight = Float.parseFloat(args[2])-40;
+        background(200);
+
+        //Assigning args values into variable to be loop in the algorithm.
+        int[] barValues = new int[args.length - 3];
+        float maxHeight = Float.parseFloat(args[2]) - 40;
         float barHeight = Float.parseFloat(args[2]);
         float highestBar = 0;
         float barWidth = 0;
 
-        for(int i=3; i<args.length; i++) {
+        //Checking for the largest value and and setting it as the highestBar.
+        for (int i = 3; i < args.length; i++) {
             int currentBarValue = Integer.parseInt(args[i]);
-            barValues[i-3] = currentBarValue;
-            if(highestBar<currentBarValue) {
+            barValues[i - 3] = currentBarValue;
+            if (highestBar < currentBarValue) {
                 highestBar = currentBarValue;
             }
         }
-    barWidth = (Float.parseFloat(args[1])-((barValues.length+1)*5))/barValues.length;
+        //Setting the barWidth equally 5 pixies apart.
+        barWidth = (Float.parseFloat(args[1]) - ((barValues.length + 1) * 5)) / barValues.length;
 
-    Random randomGenerator = new Random();
+        //Using random to assign random numbers for the fill.
+        Random randomGenerator = new Random();
 
-    for(int j=0; j<barValues.length; j++) {
-        float y = (barValues[j]/highestBar)*maxHeight;
-        float x = 5+((barWidth+5)*j);
-        int r = randomGenerator.nextInt(255);
-        int g = randomGenerator.nextInt(255);
-        int b = randomGenerator.nextInt(255);
-        fill(r, g, b);
-        rect(x, barHeight-y-20, barWidth, y);
+        for (int j = 0; j < barValues.length; j++) {
+            //Setting up the width and height of the bars.
+            float y = (barValues[j] / highestBar) * maxHeight;
+            float x = 5 + ((barWidth + 5) * j);
 
-        float center = ((barWidth/2)+(barWidth+5)*j);
-        list();
-        PFont f;
-        f = loadFont("Osaka-10.vlw");
-        textFont(f,10);
-        fill(0);
-        text(barValues[j], center, barHeight);
+            //Randomly assigning colors for each bar.
+            int r = randomGenerator.nextInt(255);
+            int g = randomGenerator.nextInt(255);
+            int b = randomGenerator.nextInt(255);
+            fill(r, g, b);
+
+            //This function draws the bar graph.
+            rect(x, barHeight - y - 20, barWidth, y);
+
+            //This will diplay the data values under the center of the bars.
+            float center = ((barWidth / 2) + (barWidth + 5) * j);
+
+            //Search a list of fonts to create the font to use.
+            //I chose "Osaka" in the size 10 font with the color black.
+            list();
+            PFont f;
+            f = loadFont("Osaka-10.vlw");
+            textFont(f, 10);
+            fill(0);
+
+            //Text() will display the values on the screen.
+            text(barValues[j], center, barHeight);
         }
     }
 }
-
-
-    

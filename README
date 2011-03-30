@@ -1,0 +1,25 @@
+Navee Outhaphone
+3/30/11
+CSC2310
+Project 1: Chart Project
+Description of program:
+This program accept integer values in the argument and display these values
+in the form of a bar graph with the input values displayed underneath each
+bar to the nth. The first two inputs will be the <width> and <height> of
+the window dimension respectively.
+
+Instruction on how to use the program:
+1. Set project configuration by customizing the arguments.
+2. The input should be in this order:
+   <width><height><data1><data2>...<dataN>
+3. Run the program. A graphic window should pop-up with the display of
+   your bar graph.
+ 
+Examples:
+In NetBean click 'Run' go to 'Set Project Configuration' then click
+'Customize...'
+Enter your values for the Arguments accordingly:
+<width><height><data1><data2>...<dataN>
+Click ok.
+Click Run.
+The program should display your values in a color bar graph.
