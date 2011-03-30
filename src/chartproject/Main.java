@@ -3,6 +3,7 @@ package chartproject;
 
 import processing.core.*;
 
+import java.util.Random;
 /**
  *
  * @author naveeouthaphone
