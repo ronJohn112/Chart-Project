@@ -24,7 +24,19 @@ public class Main extends PApplet {
 
         //Send the String array to the PApplet's main function.
         PApplet.main(tempArgs);
+    }
+    @Override
+    public void setup() {
+        float[] barValues = new float[args.length-3];
+        float highestBar = 0;
 
+        for(int i=3; i<args.length; i++) {
+            int currentBarValue = Integer.parseInt(args[i]);
+            barValues[i-3] = currentBarValue;
+            if(highestBar<currentBarValue) {
+                highestBar = currentBarValue;
+            }
+        }
     }
 }
 
