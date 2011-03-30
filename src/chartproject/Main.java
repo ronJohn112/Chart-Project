@@ -2,7 +2,6 @@
 package chartproject;
 
 import processing.core.*;
-
 import java.util.Random;
 /**
  *
@@ -36,7 +35,7 @@ public class Main extends PApplet {
         size(windowWidth, windowHeight);
         smooth();
         background(100);
-        float[] barValues = new float[args.length-3];
+        int[] barValues = new int[args.length-3];
         float maxHeight = Float.parseFloat(args[2])-40;
         float barHeight = Float.parseFloat(args[2]);
         float highestBar = 0;
