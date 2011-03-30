@@ -62,8 +62,14 @@ public class Main extends PApplet {
         fill(r, g, b);
         rect(x, barHeight-y-20, barWidth, y);
 
-
-    }
+        float center = ((barWidth/2)+(barWidth+5)*j);
+        list();
+        PFont f;
+        f = loadFont("Osaka-10.vlw");
+        textFont(f,10);
+        fill(0);
+        text(barValues[j], center, barHeight);
+        }
     }
 }
 
