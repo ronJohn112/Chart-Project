@@ -29,6 +29,7 @@ public class Main extends PApplet {
     public void setup() {
         float[] barValues = new float[args.length-3];
         float highestBar = 0;
+        float barWidth = 0;
 
         for(int i=3; i<args.length; i++) {
             int currentBarValue = Integer.parseInt(args[i]);
