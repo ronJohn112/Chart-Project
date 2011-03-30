@@ -51,10 +51,18 @@ public class Main extends PApplet {
         }
     barWidth = (Float.parseFloat(args[1])-((barValues.length+1)*5))/barValues.length;
 
+    Random randomGenerator = new Random();
+
     for(int j=0; j<barValues.length; j++) {
         float y = (barValues[j]/highestBar)*maxHeight;
         float x = 5+((barWidth+5)*j);
+        int r = randomGenerator.nextInt(255);
+        int g = randomGenerator.nextInt(255);
+        int b = randomGenerator.nextInt(255);
+        fill(r, g, b);
         rect(x, barHeight-y-20, barWidth, y);
+
+
     }
     }
 }
