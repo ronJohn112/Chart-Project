@@ -2,24 +2,25 @@ Navee Outhaphone
 3/30/11
 CSC2310
 Project 1: Chart Project
+
 Description of program:
-This program accept integer values in the argument and display these values
-in the form of a bar graph with the input values displayed underneath each
-bar to the nth. The first two inputs will be the <width> and <height> of
-the window dimension respectively.
+This program accept integer, float, and negative values from -20 to the nth value in the argument and display these values
+in a bar graph with the input values displayed underneath each bar. 
 
 Instruction on how to use the program:
-1. Set project configuration by customizing the arguments.
-2. The input should be in this order:
-   <width><height><data1><data2>...<dataN>
-3. Run the program. A graphic window should pop-up with the display of
-   your bar graph.
- 
+1.In NetBean click 'Run' go to 'Set Project Configuration' then     
+  click 'Customize...'
+2.Enter your values for the Arguments accordingly:
+  <width><height><data1><data2>...<dataN>
+3.Click ok.
+4.Click Run. A graphic window should pop-up with the display of
+  your bar graph.
+
 Examples:
-In NetBean click 'Run' go to 'Set Project Configuration' then click
-'Customize...'
-Enter your values for the Arguments accordingly:
-<width><height><data1><data2>...<dataN>
-Click ok.
-Click Run.
-The program should display your values in a color bar graph.
+1. java -jar ChartProject.jar 300 400 20 40 60 80 100
+will draw a window width of 300 and height of 400 with the first value being 20, second value being 40, third value being 60, and so on.
+
+2. java -jar ChartProject.jar 500 500 -20 10 50 45
+will draw a window width and height of 500 by 500 with the first value of -20 being drawn downward and the rest of the bars drawn upward.
+
+3. java -jar ChartProject.jar 100 700 -20 10 50 45 will display the same data as example 2, but with a shorter width and higher height.
