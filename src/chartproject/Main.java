@@ -31,7 +31,7 @@ public class Main extends PApplet {
 
     @Override
     public void setup() {
-        //Setting up the width and height of the window fromt the args.
+        //Setting up the width and height of the window from the args.
         windowWidth = Integer.parseInt(args[1]);
         windowHeight = Integer.parseInt(args[2]);
         size(windowWidth, windowHeight);
@@ -39,15 +39,15 @@ public class Main extends PApplet {
         background(200);
 
         //Assigning args values into variable to be loop in the algorithm.
-        int[] barValues = new int[args.length - 3];
-        float maxHeight = Float.parseFloat(args[2]) - 40;
+        float[] barValues = new float[args.length - 3];
+        float maxHeight = Float.parseFloat(args[2]) - 80;
         float barHeight = Float.parseFloat(args[2]);
         float highestBar = 0;
         float barWidth = 0;
 
         //Checking for the largest value and and setting it as the highestBar.
         for (int i = 3; i < args.length; i++) {
-            int currentBarValue = Integer.parseInt(args[i]);
+            float currentBarValue = Float.parseFloat(args[i]);
             barValues[i - 3] = currentBarValue;
             if (highestBar < currentBarValue) {
                 highestBar = currentBarValue;
@@ -71,9 +71,9 @@ public class Main extends PApplet {
             fill(r, g, b);
 
             //This function draws the bar graph.
-            rect(x, barHeight - y - 20, barWidth, y);
+            rect(x, barHeight - y - 40, barWidth, y);
 
-            //This will diplay the data values under the center of the bars.
+            //This will display the data values under the center of the bars.
             float center = ((barWidth / 2) + (barWidth + 5) * j);
 
             //Search a list of fonts to create the font to use.
@@ -85,7 +85,7 @@ public class Main extends PApplet {
             fill(0);
 
             //Text() will display the values on the screen.
-            text(barValues[j], center, barHeight);
+            text((int)barValues[j], center, barHeight);
         }
     }
 }
